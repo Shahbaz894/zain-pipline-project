@@ -1,8 +1,8 @@
 stages:
   make_dataset:
-    cmd: python .\src\data\make_dataset.py .\data\raw\creditcard.csv
+    cmd: python .\src\data\make_dataset.py .\data\raw\titanic.csv
     deps:
-    - .\data\raw\creditcard.csv
+    - .\data\raw\titanic.csv
     - .\src\data\make_dataset.py
     params:
     - make_dataset.test_split
