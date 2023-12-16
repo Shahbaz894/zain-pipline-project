@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  make_dataset:
+    cmd: python .\src\data\make_dataset.py .\data\raw\titanic.csv
+    deps:
+    - path: .\data\raw\titanic.csv
+      hash: md5
+      md5: 01848d1179672a48e91a53bfb1035ad7
+      size: 7693
+    - path: .\src\data\make_dataset.py
+      hash: md5
+      md5: cd5c7e3bf7441e6a3ce75b5560b96424
+      size: 1316
+    params:
+      params.yaml:
+        make_dataset.seed: 2023
+        make_dataset.test_split: 0.2
+    outs:
+    - path: .\data\processed\
+      hash: md5
+      md5: 347ca0b9c363d9e818562cc9c464bb85.dir
+      size: 8150
+      nfiles: 2
